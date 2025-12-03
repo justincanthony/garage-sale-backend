@@ -1,11 +1,12 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { requireEnv } from './utils/validateEnv';
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = requireEnv('PORT');
 
 app.use(cors());
 app.use(express.json());
