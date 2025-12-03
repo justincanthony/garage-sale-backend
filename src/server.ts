@@ -5,13 +5,17 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');
+});
+
+app.get('/health', (req: Request, res: Response) => {
+  res.send({ "success": true, "message": "Backend running" });
 });
 
 app.listen(port, () => {
