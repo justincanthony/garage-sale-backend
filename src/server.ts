@@ -1,12 +1,10 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import { requireEnv } from './utils/validateEnv';
 
-dotenv.config();
+import { config } from './config';
 
 const app = express();
-const port = requireEnv('PORT');
+const port = config.port;
 
 app.use(cors());
 app.use(express.json());
