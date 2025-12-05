@@ -7,7 +7,12 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:first": "standard-version --first-release"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +22,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.1",
     "nodemon": "^3.1.11",
+    "standard-version": "^9.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
